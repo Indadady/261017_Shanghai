@@ -17,7 +17,6 @@
     <!-- SEO & Open Graph -->
     <meta name="description" content="영월교육지원청 진로진학지원센터 항주/상해 4박 5일 AI산업 및 대학탐방 공식 스마트 가이드북">
     <meta property="og:title" content="[영월교육지원청] 🇨🇳 상해/항주 AI 탐방 가이드북">
-    <!-- 카카오톡 썸네일을 메인 배경 이미지로 변경 -->
     <meta property="og:image" content="https://images.openai.com/static-rsc-3/hfo0IYgFD2KYN3r3OJWnGohuuOyA6xmE9fSWKgGQMRxEt30TiBLZ5ipZuLBbmYn3SaShnqjZIWXHBuTbUe9YIZ8ZiTS7MFrtYOU8Dy-UUT8?purpose=fullsize&v=1">
 
     <!-- Tailwind CSS -->
@@ -77,6 +76,7 @@
                     <a href="#china-prep" class="px-3 py-2 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"><i class="fa-solid fa-mobile-screen mr-1"></i>여행준비</a>
                     <a href="#preview" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">도시미리보기</a>
                     <a href="#schedule" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">세부일정</a>
+                    <a href="#ai-guide" class="px-3 py-2 text-sm font-bold text-purple-600 hover:text-purple-800 hover:bg-purple-50 rounded-lg transition-colors"><i class="fa-solid fa-robot mr-1"></i>AI객실가이드</a>
                     <a href="#check" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">준비물</a>
                 </div>
             </div>
@@ -189,7 +189,6 @@
                                     <div class="flex flex-col items-center w-24">
                                         <span class="text-[10px] text-slate-400 font-bold">OZ366</span>
                                         <div class="w-full h-[2px] bg-slate-300 relative my-1">
-                                            <!-- 방향 수정: PVG에서 ICN으로 우측을 향하도록 변경 -->
                                             <i class="fa-solid fa-plane text-slate-800 absolute -top-2 left-1/2 -translate-x-1/2 bg-white px-1"></i>
                                         </div>
                                         <span class="text-[10px] text-slate-400">약 2시간 00분</span>
@@ -428,15 +427,23 @@
                                 <h4 class="font-bold text-lg">오산 성황각 & 청하방 옛거리 관광</h4>
                                 <p class="text-slate-500 text-sm mt-1">항주의 전경을 조망하고 중국 전통 거리를 거닐며 문화 체험</p>
                             </div>
-                            <div class="relative pl-8 border-l-2 border-cyan-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-200"></div>
-                                <h4 class="font-bold text-lg">송성 가무쇼 (VIP석 관람)</h4>
-                                <p class="text-slate-500 text-sm mt-1">세계 3대 쇼 중 하나로 꼽히는 압도적 스케일의 공연 관람</p>
-                            </div>
+                            <!-- 송성가무쇼 삭제됨 -->
                             <div class="relative pl-8 border-l-2 border-cyan-100">
                                 <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                                <h4 class="font-bold text-lg">🍽️ 식사 및 AI 스마트 호텔 체험</h4>
-                                <p class="text-slate-500 text-sm mt-1">석식: 동파육 특식<br>HOTEL: <strong class="text-cyan-700">플라이주(FlyZoo) AI 호텔</strong> (알리바바 무인 시스템 체험) 혹은 동급 [준5성]</p>
+                                <h4 class="font-bold text-lg">🍽️ 식사 및 알리바바 미래형 AI 호텔 체험</h4>
+                                <p class="text-slate-500 text-sm mt-1 mb-3">석식: 동파육 특식</p>
+                                
+                                <div class="bg-cyan-50 border border-cyan-100 p-4 rounded-xl">
+                                    <h5 class="font-bold text-cyan-800 flex items-center gap-2 mb-2">
+                                        <i class="fa-solid fa-robot text-cyan-600"></i> 플라이주(FlyZoo) AI 호텔 투숙
+                                    </h5>
+                                    <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+                                        <li><strong>안면인식 시스템:</strong> 키 없이 얼굴 인식만으로 체크인 및 객실 출입</li>
+                                        <li><strong>로봇 룸서비스:</strong> 자율주행 로봇이 객실까지 물품 배달</li>
+                                        <li><strong>스마트 객실 (Tmall Genie):</strong> 음성 명령으로 조명, 커튼, TV, 온도 등 제어</li>
+                                        <li><strong>무인 피트니스/레스토랑:</strong> 미래 지향적 호스피탈리티 산업 직간접 체험</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -494,7 +501,7 @@
                             <div class="relative pl-8 border-l-2 border-blue-100">
                                 <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-600"></div>
                                 <h4 class="font-bold text-lg">동화대학교 공식 방문 (예정)</h4>
-                                <p class="text-slate-500 text-sm mt-1">캠퍼스 견학 및 탐방 <br><span class="text-red-500 text-xs font-bold">* 미정: 현지 대학 사정에 따라 방문 대학교는 다른 명문대로 변경될 수 있습니다.</span></p>
+                                <p class="text-slate-500 text-sm mt-1">캠퍼 견학 및 탐방 <br><span class="text-red-500 text-xs font-bold">* 미정: 현지 대학 사정에 따라 방문 대학교는 다른 명문대로 변경될 수 있습니다.</span></p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-blue-100">
                                 <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-300"></div>
@@ -570,6 +577,182 @@
                             <p class="text-sm mt-2"><strong>19:20</strong> 인천 국제공항 도착 및 해산</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: AI Voice Assistant Guide (Dark Futuristic Theme) MOVED HERE -->
+    <section id="ai-guide" class="py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white border-t border-slate-800 shadow-inner">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="inline-block bg-purple-500/20 text-purple-300 text-xs px-3 py-1 rounded-full font-bold shadow-sm mb-3 border border-purple-500/30">호텔 200% 활용하기 · 플라이주(FlyZoo) 전용</span>
+                    <h2 class="text-3xl font-bold text-white mb-3 flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-robot text-purple-400"></i> 객실 AI 음성비서 완벽 가이드
+                    </h2>
+                    <p class="text-slate-300 text-sm">중국어를 몰라도 괜찮아요! 아래 한국어 발음대로 당당하게 말해보세요.</p>
+                </div>
+
+                <!-- How to use -->
+                <div class="bg-white/5 p-6 rounded-3xl border border-white/10 mb-8 flex flex-col md:flex-row items-center gap-6 shadow-2xl backdrop-blur-md relative overflow-hidden">
+                    <!-- Deco circle -->
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+                    
+                    <div class="shrink-0 relative z-10">
+                        <!-- Tmall Genie Icon -->
+                        <div class="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center border-4 border-slate-600 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                            <i class="fa-solid fa-wave-square text-3xl text-purple-400 animate-pulse"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1 text-center md:text-left relative z-10">
+                        <h3 class="text-purple-300 font-bold mb-3 text-lg">👉 AI 비서 사용 방법</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 text-sm">
+                            <div class="bg-slate-800 px-5 py-3 rounded-2xl border border-slate-600 w-full md:w-auto shadow-md">
+                                <span class="block text-slate-400 text-xs mb-1">Step 1. 이름 부르기</span>
+                                <span class="font-bold text-lg tracking-wide">"티엔마오 징링"</span> <span class="text-xs text-slate-500 ml-1">(天猫精灵)</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-slate-500 hidden md:block"></i>
+                            <i class="fa-solid fa-arrow-down text-slate-500 md:hidden"></i>
+                            <div class="bg-purple-900/40 px-5 py-3 rounded-2xl border border-purple-700/50 w-full md:w-auto shadow-md">
+                                <span class="block text-purple-300/80 text-xs mb-1">Step 2. 띠링~ 소리 후 명령하기</span>
+                                <span class="font-bold text-lg text-purple-200">"다카이 떵"</span> <span class="text-xs text-purple-400 ml-1">(불 켜줘)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commands Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    
+                    <!-- 1. Lighting / Curtain -->
+                    <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-amber-500/50 transition-colors">
+                        <h4 class="font-bold text-amber-400 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-lightbulb"></i> 조명 · 커튼 제어
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">불 켜기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">打开灯</div><div class="font-bold text-amber-200 text-sm">다카이 떵</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">불 끄기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">关闭灯</div><div class="font-bold text-amber-200 text-sm">꽌비 떵</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">밝게 해줘</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">调亮一点</div><div class="font-bold text-amber-200 text-sm">탸오 량 이디앤</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">어둡게 해줘</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">调暗一点</div><div class="font-bold text-amber-200 text-sm">탸오 안 이디앤</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">커튼 열기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">打开窗帘</div><div class="font-bold text-amber-200 text-sm">다카이 촹리앤</div></div>
+                            </li>
+                            <li class="flex justify-between items-center pb-1">
+                                <span class="text-sm font-medium text-slate-200">커튼 닫기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">关闭窗帘</div><div class="font-bold text-amber-200 text-sm">꽌비 촹리앤</div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. AC / Temp -->
+                    <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-cyan-500/50 transition-colors">
+                        <h4 class="font-bold text-cyan-400 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-snowflake"></i> 에어컨 · 온도 제어
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">에어컨 켜기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">打开空调</div><div class="font-bold text-cyan-200 text-sm">다카이 콩탸오</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">에어컨 끄기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">关闭空调</div><div class="font-bold text-cyan-200 text-sm">꽌비 콩탸오</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">26도로 설정</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">温度调到二十六度</div><div class="font-bold text-cyan-200 text-sm">원두 탸오따오 얼스리우 뚜</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">온도 올리기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">调高一点温度</div><div class="font-bold text-cyan-200 text-sm">탸오 까오 이디앤 원두</div></div>
+                            </li>
+                            <li class="flex justify-between items-center pb-1">
+                                <span class="text-sm font-medium text-slate-200">온도 낮추기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">调低一点温度</div><div class="font-bold text-cyan-200 text-sm">탸오 띠 이디앤 원두</div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. TV / Music -->
+                    <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-pink-500/50 transition-colors">
+                        <h4 class="font-bold text-pink-400 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-tv"></i> TV · 음악 제어
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">TV 켜기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">打开电视</div><div class="font-bold text-pink-200 text-sm">다카이 띠앤스</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">TV 끄기</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">关闭电视</div><div class="font-bold text-pink-200 text-sm">꽌비 띠앤스</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">채널 변경</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">换台</div><div class="font-bold text-pink-200 text-sm">후안 타이</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">소리 크게 / 작게</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">调大声音 / 调小声音</div><div class="font-bold text-pink-200 text-sm">탸오 따 / 탸오 샤오 셩인</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">음악 틀어줘</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">播放音乐</div><div class="font-bold text-pink-200 text-sm">보팡 인위에</div></div>
+                            </li>
+                            <li class="flex justify-between items-center pb-1">
+                                <span class="text-sm font-medium text-slate-200">음악 멈춰줘</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">停止播放</div><div class="font-bold text-pink-200 text-sm">팅즈 보팡</div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 4. Service / Time -->
+                    <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-emerald-500/50 transition-colors">
+                        <h4 class="font-bold text-emerald-400 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-bell-concierge"></i> 편의 · 호텔 서비스
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">지금 몇 시야?</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">现在几点</div><div class="font-bold text-emerald-200 text-sm">시앤짜이 지디앤</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">7시 알람 설정</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">设置闹钟七点</div><div class="font-bold text-emerald-200 text-sm">셔즈 나오종 치디앤</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">내일 날씨</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">明天天气</div><div class="font-bold text-emerald-200 text-sm">밍티앤 티앤치</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">프런트 연결</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">呼叫前台</div><div class="font-bold text-emerald-200 text-sm">후쟈오 치앤타이</div></div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
+                                <span class="text-sm font-medium text-slate-200">수건 요청</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">需要毛巾</div><div class="font-bold text-emerald-200 text-sm">쉬야오 마오진</div></div>
+                            </li>
+                            <li class="flex justify-between items-center pb-1">
+                                <span class="text-sm font-medium text-slate-200">생수 요청</span>
+                                <div class="text-right"><div class="text-[10px] text-slate-500">需要矿泉水</div><div class="font-bold text-emerald-200 text-sm">쉬야오 쾅취앤쉐이</div></div>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -689,8 +872,7 @@
                         <ul class="list-disc list-inside space-y-1">
                             <li><strong>12:25</strong> 인천국제공항 출발 / <strong>13:45</strong> 항주 도착</li>
                             <li>오산 성황각 & 청하방 옛거리 관광</li>
-                            <li>송성 가무쇼 (VIP석 관람)</li>
-                            <li class="mt-2 text-blue-700"><strong>[호텔] 플라이주(FlyZoo) AI 호텔 (무인 시스템 체험)</strong></li>
+                            <li class="mt-2"><strong class="text-blue-700">[호텔] 플라이주(FlyZoo) AI 호텔</strong><br><span class="text-xs text-gray-600">- 안면인식 체크인, 음성제어 스마트룸, 배달 로봇 등 미래 기술 체험</span></li>
                         </ul>
                     </td>
                     <td class="border border-gray-400 p-2 text-center text-gray-700">
@@ -767,7 +949,59 @@
             </tbody>
         </table>
 
-        <div class="flex justify-between items-center mt-8 pt-4 border-t border-gray-300">
+        <!-- 인쇄용 AI 객실 가이드 (치트시트) -->
+        <div class="mt-8">
+            <h3 class="font-bold text-lg border-b-2 border-gray-800 pb-2 mb-4">🤖 플라이주(FlyZoo) AI 호텔 음성비서 치트시트</h3>
+            <p class="text-[11px] text-gray-600 mb-3">※ 객실 내 기기를 향해 <strong>"티엔마오 징링"</strong> 이라고 부른 뒤 띠링 소리가 나면 아래 명령어 발음을 또박또박 말해보세요.</p>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-bold text-[12px] bg-gray-100 p-1 mb-2">💡 조명 / 커튼</h4>
+                    <table class="w-full text-[11px] border-collapse border border-gray-300">
+                        <tbody>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold w-20">불 켜기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">다카이 떵</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">불 끄기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">꽌비 떵</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">커튼 열기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">다카이 촹리앤</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">커튼 닫기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">꽌비 촹리앤</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[12px] bg-gray-100 p-1 mb-2">❄️ 에어컨 / 온도</h4>
+                    <table class="w-full text-[11px] border-collapse border border-gray-300">
+                        <tbody>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold w-20">에어컨 켜기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">다카이 콩탸오</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">에어컨 끄기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">꽌비 콩탸오</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">26도 설정</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">원두 탸오따오 얼스리우 뚜</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">온도 올리기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">탸오 까오 이디앤 원두</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[12px] bg-gray-100 p-1 mb-2">📺 TV / 편의 기능</h4>
+                    <table class="w-full text-[11px] border-collapse border border-gray-300">
+                        <tbody>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold w-20">TV 켜기/끄기</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">다카이 띠앤스 / 꽌비 띠앤스</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">음악 틀어줘</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">보팡 인위에</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">지금 몇 시야</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">시앤짜이 지디앤</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">내일 날씨</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">밍티앤 티앤치</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[12px] bg-gray-100 p-1 mb-2">🛎️ 호텔 서비스</h4>
+                    <table class="w-full text-[11px] border-collapse border border-gray-300">
+                        <tbody>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold w-20">수건 요청</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">쉬야오 마오진</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">생수 요청</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">쉬야오 쾅취앤쉐이</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">객실 청소</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">쉬야오 따사오 팡지앤</td></tr>
+                            <tr><td class="border border-gray-300 p-1 bg-gray-50 font-bold">프런트 연결</td><td class="border border-gray-300 p-1 text-blue-700 font-bold">후쟈오 치앤타이</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-6 pt-4 border-t border-gray-300">
             <div class="flex items-center gap-2">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s320/logo.png" alt="Tourmaker Logo" style="height: 20px;">
                 <span class="text-xs font-bold text-gray-600">TOURMAKER INC.</span>
