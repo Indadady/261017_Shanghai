@@ -35,13 +35,9 @@
             background-size: cover; background-position: center; background-attachment: fixed;
         }
         @media (max-width: 768px){ .hero-bg { background-attachment: scroll; } }
-        #map { height: 500px; width: 100%; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        section { scroll-margin-top: 80px; }
         
-        /* Map Customization */
+        /* Map Styles */
+        #map { height: 500px; width: 100%; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); z-index: 10;}
         .custom-icon div {
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             transition: transform 0.2s;
@@ -50,6 +46,13 @@
             transform: scale(1.1);
             z-index: 100;
         }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        section { scroll-margin-top: 80px; }
     </style>
 </head>
 <body class="antialiased pb-20 md:pb-0">
@@ -67,17 +70,20 @@
                 <span id="d-day-badge" class="hidden bg-cyan-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold animate-pulse"></span>
             </div>
             
-            <!-- Desktop & Mobile Scrollable Menu -->
+            <!-- Desktop & Mobile Scrollable Menu (순서 재배치됨) -->
             <div class="flex-1 overflow-x-auto no-scrollbar ml-4 md:ml-8">
                 <div class="flex items-center space-x-1 md:space-x-6 whitespace-nowrap pr-4">
                     <a href="#home" class="px-3 py-2 text-sm font-bold text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">홈</a>
                     <a href="#highlights" class="px-3 py-2 text-sm font-bold text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 rounded-lg transition-colors"><i class="fa-solid fa-star mr-1"></i>핵심포인트</a>
                     <a href="#flight" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">항공/공항</a>
-                    <a href="#china-prep" class="px-3 py-2 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"><i class="fa-solid fa-mobile-screen mr-1"></i>여행준비</a>
+                    <a href="#china-prep" class="px-3 py-2 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"><i class="fa-solid fa-mobile-screen mr-1"></i>알리페이</a>
                     <a href="#preview" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">도시미리보기</a>
+                    <a href="#map-section" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">동선지도</a>
                     <a href="#schedule" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">세부일정</a>
-                    <a href="#ai-guide" class="px-3 py-2 text-sm font-bold text-purple-600 hover:text-purple-800 hover:bg-purple-50 rounded-lg transition-colors"><i class="fa-solid fa-robot mr-1"></i>AI객실가이드</a>
+                    <a href="#ai-guide" class="px-3 py-2 text-sm font-bold text-purple-600 hover:text-purple-800 hover:bg-purple-50 rounded-lg transition-colors"><i class="fa-solid fa-robot mr-1"></i>AI호텔가이드</a>
                     <a href="#check" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-slate-50 rounded-lg transition-colors">준비물</a>
+                    <a href="#safety" class="px-3 py-2 text-sm font-bold text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-colors"><i class="fa-solid fa-shield-halved mr-1"></i>안전매뉴얼</a>
+                    <a href="#tsafe" class="px-3 py-2 text-sm font-bold text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-colors"><i class="fa-solid fa-truck-medical mr-1"></i>긴급지원</a>
                 </div>
             </div>
 
@@ -107,9 +113,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center mb-4 text-3xl">
-                        🎓
-                    </div>
+                    <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center mb-4 text-3xl">🎓</div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">글로컬 패스파인더 연계</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
                         강원대학교의 우수 진로 탐색 프로그램 <span class="text-cyan-600 font-bold">'글로컬 패스파인더'</span>의 철학을 반영하여, 동화대학교 공식 방문 등 대학 진학과 연계된 깊이 있는 글로벌 시야를 제공합니다.
@@ -118,9 +122,7 @@
                 </div>
 
                 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center mb-4 text-3xl">
-                        🤖
-                    </div>
+                    <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center mb-4 text-3xl">🤖</div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">4차 산업혁명 핵심 기지</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
                         교과서 밖의 진짜 미래를 만납니다. <span class="text-indigo-600 font-bold">알리바바, 레노버 미래센터, 바이두 무인운전 체험</span> 등 글로벌 빅테크 기업의 AI 기술을 직접 체험합니다.
@@ -129,9 +131,7 @@
                 </div>
 
                 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4 text-3xl">
-                        🛡️
-                    </div>
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4 text-3xl">🛡️</div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">학생 중심 프리미엄 케어</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
                         아시아나(국적기) 이용, <span class="text-emerald-600 font-bold">전 일정 노쇼핑/노옵션/노팁</span>으로 온전히 교육과 탐방에만 집중합니다. 동파육, 딤섬 등 학생들 입맛에 맞춘 특식을 제공합니다.
@@ -203,14 +203,13 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Airport Guide -->
             <div class="max-w-5xl mx-auto">
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-lg p-6 md:p-8">
                     <h3 class="font-bold text-slate-800 text-lg mb-6 flex items-center gap-2">
                         <i class="fa-solid fa-users text-cyan-600"></i> 단체 수속 및 공항 이용 안내
                     </h3>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                         <div class="bg-cyan-50 rounded-xl p-4 border border-cyan-100 relative group">
                             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shadow-md">1</div>
@@ -243,7 +242,7 @@
     </section>
 
     <!-- China Travel Prep (Alipay/WeChat) -->
-    <section id="china-prep" class="py-12 bg-blue-50">
+    <section id="china-prep" class="py-12 bg-blue-50 border-t border-slate-200">
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto text-center mb-8">
                 <span class="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-sm mb-3">스마트한 중국 탐방</span>
@@ -262,7 +261,7 @@
                             </li>
                             <li class="flex gap-3 items-start">
                                 <span class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shrink-0">2</span>
-                                <span>본인(또는 부모님) 명의의 <strong>신용/체크카드(VISA, Master 등)</strong>를 앱 내 결제수단으로 등록합니다.</span>
+                                <span>본인(또는 부모님) 명의의 <strong>신용/체크카드</strong>를 앱 내 결제수단으로 등록합니다.</span>
                             </li>
                             <li class="flex gap-3 items-start">
                                 <span class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shrink-0">3</span>
@@ -270,7 +269,7 @@
                             </li>
                             <li class="flex gap-3 items-start">
                                 <span class="bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shrink-0">!</span>
-                                <span><strong class="text-slate-800">주의사항:</strong> 현지에서는 구글/유튜브/카톡 접속이 제한될 수 있으니 <strong>로밍(VPN 포함)</strong> 또는 현지 유심을 준비하세요.</span>
+                                <span><strong class="text-slate-800">주의사항:</strong> 현지에서는 구글/카톡 접속이 제한될 수 있으니 <strong>로밍(VPN 포함)</strong> 또는 현지 유심을 준비하세요.</span>
                             </li>
                         </ol>
                     </div>
@@ -292,13 +291,13 @@
         </div>
     </section>
 
-    <!-- City Preview -->
-    <section id="preview" class="py-16 bg-white">
+    <!-- City Preview Section -->
+    <section id="preview" class="py-16 bg-white border-t border-slate-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
                 <span class="text-cyan-600 font-black tracking-widest text-xs uppercase">City Preview</span>
                 <h2 class="text-3xl font-bold text-slate-800 mt-2">탐방 도시 미리보기</h2>
-                <p class="text-slate-500 mt-2">영상과 사진으로 만나는 상하이와 항저우</p>
+                <p class="text-slate-500 mt-2">영상과 설명으로 만나는 미래의 상하이와 혁신의 항저우</p>
             </div>
 
             <!-- Videos -->
@@ -319,42 +318,34 @@
 
             <!-- City Descriptions -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Shanghai Card -->
                 <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition">
                     <h3 class="text-2xl font-bold text-slate-800 border-b border-slate-200 pb-4 mb-4">
                         상하이 <span class="text-lg text-cyan-600 font-medium ml-2">미래를 만나다</span>
                     </h3>
                     <div class="space-y-4">
                         <div>
-                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-scroll text-amber-600"></i> 역사와 성장</h4>
-                            <p class="text-sm text-slate-600 mt-1 leading-relaxed">작은 어촌에서 시작해 19세기 개항 후 금융·상업의 허브로 급성장했습니다. 와이탄의 고풍스러운 건축물과 푸동의 최첨단 마천루가 마주 보는 독특한 스카이라인을 자랑합니다.</p>
+                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-microchip text-blue-500"></i> 아시아의 실리콘밸리</h4>
+                            <p class="text-sm text-slate-600 mt-1 leading-relaxed">상하이는 단순한 금융 허브를 넘어, 바이두, 레노버 등 빅테크 기업들이 모여 자율주행과 AI 산업을 주도하고 있는 최첨단 도시입니다.</p>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-masks-theater text-indigo-500"></i> 문화적 특징 (해파이)</h4>
-                            <ul class="text-sm text-slate-600 mt-1 leading-relaxed list-disc list-inside">
-                                <li><strong>건축:</strong> 동서양 건축 양식의 조화 (와이탄 vs 푸동)</li>
-                                <li><strong>미식:</strong> 샤오롱바오, 생지엔 등 다채로운 딤섬 문화</li>
-                            </ul>
+                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-masks-theater text-indigo-500"></i> 조화로운 문화 (해파이)</h4>
+                            <p class="text-sm text-slate-600 mt-1 leading-relaxed">와이탄의 고풍스러운 유럽식 건축물과 푸동의 사이버펑크적인 마천루가 황포강을 사이에 두고 마주 보는 독특한 뷰를 자랑합니다.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hangzhou Card -->
                 <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition">
                     <h3 class="text-2xl font-bold text-slate-800 border-b border-slate-200 pb-4 mb-4">
                         항저우 <span class="text-lg text-emerald-600 font-medium ml-2">혁신과 전통</span>
                     </h3>
                     <div class="space-y-4">
                         <div>
-                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-scroll text-amber-600"></i> 유서 깊은 역사</h4>
-                            <p class="text-sm text-slate-600 mt-1 leading-relaxed">남송(南宋) 시대의 수도이자 신석기 양저우 문화의 발상지입니다. 최근에는 알리바바 본사가 위치한 '중국 전자상거래와 기술 혁신의 심장부'로 재탄생했습니다.</p>
+                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-robot text-emerald-500"></i> 전자상거래의 심장부</h4>
+                            <p class="text-sm text-slate-600 mt-1 leading-relaxed">마윈이 창업한 '알리바바'의 본사가 위치해 있으며, 도시 전체가 AI 시스템으로 구동되는 세계 최고의 스마트 시티로 평가받고 있습니다.</p>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-leaf text-emerald-500"></i> 자연과 도시의 융합</h4>
-                            <ul class="text-sm text-slate-600 mt-1 leading-relaxed list-disc list-inside">
-                                <li><strong>서호(West Lake):</strong> 유네스코 세계유산으로 지정된 절경</li>
-                                <li><strong>특산물:</strong> 용정차(녹차)와 비단(실크)의 본고장</li>
-                            </ul>
+                            <h4 class="font-bold text-slate-700 flex items-center gap-2"><i class="fa-solid fa-leaf text-green-600"></i> 유네스코 세계유산</h4>
+                            <p class="text-sm text-slate-600 mt-1 leading-relaxed">최첨단 기술 도시임에도 불구하고, 송나라의 역사가 깃든 '서호'의 고즈넉한 풍경과 용정차(녹차)가 완벽한 조화를 이룹니다.</p>
                         </div>
                     </div>
                 </div>
@@ -362,19 +353,22 @@
         </div>
     </section>
 
-    <!-- Map -->
-    <section id="map-section" class="py-12 bg-slate-50">
+    <!-- Map Section (Original Simple Macro Route) -->
+    <section id="map-section" class="py-12 bg-slate-50 border-t border-slate-200">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-slate-800 tracking-tight">AI & 미래산업 탐방 동선</h2>
+                <span class="text-cyan-600 font-bold tracking-wider uppercase text-sm">SMART ROUTE</span>
+                <h2 class="text-3xl font-bold text-slate-800 tracking-tight mt-2">AI & 미래산업 탐방 동선</h2>
                 <p class="text-slate-500 mt-2">항주 공항 입국부터 상해 공항 출국까지 이어지는 핵심 코스</p>
             </div>
-            <div class="max-w-5xl mx-auto border border-slate-200 rounded-2xl p-1 shadow-lg bg-white">
+            
+            <div class="max-w-5xl mx-auto border border-slate-200 rounded-2xl p-1 shadow-lg bg-white relative z-10">
                 <div id="map"></div>
             </div>
+            
             <div class="max-w-5xl mx-auto mt-4 flex flex-wrap justify-center gap-4 text-xs font-bold text-slate-600">
-                <div class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-cyan-600"></span>대학/산업탐방</div>
-                <div class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-indigo-600"></span>역사/문화탐방</div>
+                <div class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-[#0891b2]"></span>대학/산업탐방</div>
+                <div class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-[#4f46e5]"></span>역사/문화탐방</div>
                 <div class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-slate-500"></span>공항</div>
             </div>
         </div>
@@ -387,12 +381,11 @@
                 <div class="text-center mb-10">
                     <div class="flex justify-center items-center gap-3 mb-2">
                         <h2 class="text-2xl font-bold text-slate-800">세부 탐방 일정</h2>
-                        <!-- A4 인쇄 버튼 추가 -->
+                        <!-- A4 인쇄 버튼 -->
                         <button onclick="window.print()" class="bg-slate-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-md hover:bg-slate-700 transition flex items-center gap-1"><i class="fa-solid fa-print"></i> 일정표 인쇄</button>
                     </div>
-                    <!-- 일정 변동 안내문 추가 -->
                     <p class="text-red-500 text-xs font-bold mb-3">* 상기 상세 일정은 현지 사정(기상, 교통, 기관 일정 등)에 의하여 변동될 수 있습니다.</p>
-                    <p class="text-slate-600 text-sm mt-3 leading-relaxed bg-cyan-50 border border-cyan-100 p-4 rounded-xl inline-block text-left">
+                    <p class="text-slate-600 text-sm mt-3 leading-relaxed bg-cyan-50 border border-cyan-100 p-4 rounded-xl inline-block text-left shadow-sm">
                         <strong class="text-cyan-700 block mb-1">💡 영월교육지원청 진로진학지원센터장님 기획 포인트:</strong> 
                         관내 학생들에게 최고의 글로벌 진로 탐색 기회를 제공하고자 하는 <strong>센터장님의 교육 철학</strong>을 온전히 담아, 4차 산업혁명의 핵심 기업(알리바바, 레노버 등)과 명문 대학(동화대)을 밀도 있게 체험할 수 있도록 맞춤형 일정을 설계했습니다.
                     </p>
@@ -419,31 +412,28 @@
                         <div class="space-y-6">
                             <div class="relative pl-8 border-l-2 border-cyan-100">
                                 <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-600"></div>
-                                <h4 class="font-bold text-lg">12:25 인천 출발 / 13:45 항주 도착</h4>
+                                <h4 class="font-bold text-lg text-slate-800">12:25 인천 출발 / 13:45 항주 도착</h4>
                                 <p class="text-slate-500 text-sm mt-1">아시아나항공 OZ359편 이용. 입국 수속 및 가이드 미팅</p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-cyan-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-200"></div>
-                                <h4 class="font-bold text-lg">오산 성황각 & 청하방 옛거리 관광</h4>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-400"></div>
+                                <h4 class="font-bold text-lg text-slate-800">오산 성황각 & 청하방 옛거리 관광</h4>
                                 <p class="text-slate-500 text-sm mt-1">항주의 전경을 조망하고 중국 전통 거리를 거닐며 문화 체험</p>
                             </div>
-                            <!-- 송성가무쇼 삭제됨 -->
-                            <div class="relative pl-8 border-l-2 border-cyan-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                                <h4 class="font-bold text-lg">🍽️ 식사 및 알리바바 미래형 AI 호텔 체험</h4>
-                                <p class="text-slate-500 text-sm mt-1 mb-3">석식: 동파육 특식</p>
-                                
-                                <div class="bg-cyan-50 border border-cyan-100 p-4 rounded-xl">
-                                    <h5 class="font-bold text-cyan-800 flex items-center gap-2 mb-2">
-                                        <i class="fa-solid fa-robot text-cyan-600"></i> 플라이주(FlyZoo) AI 호텔 투숙
-                                    </h5>
-                                    <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
-                                        <li><strong>안면인식 시스템:</strong> 키 없이 얼굴 인식만으로 체크인 및 객실 출입</li>
-                                        <li><strong>로봇 룸서비스:</strong> 자율주행 로봇이 객실까지 물품 배달</li>
-                                        <li><strong>스마트 객실 (Tmall Genie):</strong> 음성 명령으로 조명, 커튼, TV, 온도 등 제어</li>
-                                        <li><strong>무인 피트니스/레스토랑:</strong> 미래 지향적 호스피탈리티 산업 직간접 체험</li>
-                                    </ul>
-                                </div>
+                            <div class="relative pl-8 border-l-2 border-transparent">
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-400 shadow-md"></div>
+                                <h4 class="font-bold text-lg text-slate-800">🍽️ 석식: 동파육 특식</h4>
+                            </div>
+                            
+                            <div class="bg-cyan-50 border border-cyan-100 p-5 rounded-2xl mt-4 shadow-sm">
+                                <h5 class="font-bold text-cyan-800 flex items-center gap-2 mb-3 text-lg">
+                                    <i class="fa-solid fa-robot text-cyan-600"></i> [숙박] 플라이주(FlyZoo) AI 호텔
+                                </h5>
+                                <ul class="text-sm text-slate-700 list-disc list-inside space-y-2">
+                                    <li><strong>안면인식 시스템:</strong> 키 없이 얼굴 인식만으로 체크인 및 객실 출입</li>
+                                    <li><strong>로봇 룸서비스:</strong> 자율주행 로봇이 객실까지 물품 배달</li>
+                                    <li><strong>스마트 객실:</strong> 음성 명령으로 조명, 커튼, TV, 온도 등 제어</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -458,24 +448,24 @@
                         </div>
                         <div class="space-y-6">
                             <div class="relative pl-8 border-l-2 border-indigo-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-600"></div>
-                                <h4 class="font-bold text-lg">알리바바 본사 공식 방문</h4>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-600"></div>
+                                <h4 class="font-bold text-lg text-slate-800">알리바바 본사 공식 방문</h4>
                                 <p class="text-slate-500 text-sm mt-1">관계자 설명 및 가이드 통역 포함</p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-indigo-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-400"></div>
-                                <h4 class="font-bold text-lg">스마트 버스 체험</h4>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-400"></div>
+                                <h4 class="font-bold text-lg text-slate-800">스마트 버스 체험</h4>
                                 <p class="text-slate-500 text-sm mt-1">미래 모빌리티 탑승 체험 (미니버스 1회 12명 탑승)</p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-indigo-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-200"></div>
-                                <h4 class="font-bold text-lg">서호 관광 & 자유 탐방</h4>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-400"></div>
+                                <h4 class="font-bold text-lg text-slate-800">서호 관광 & 자유 탐방</h4>
                                 <p class="text-slate-500 text-sm mt-1">관광 후 전용차량으로 상해로 이동 (약 3시간 소요)</p>
                             </div>
-                            <div class="relative pl-8 border-l-2 border-indigo-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                                <h4 class="font-bold text-lg">🍽️ 식사 및 호텔 투숙</h4>
-                                <p class="text-slate-500 text-sm mt-1">조식: 호텔식 / 중식: 알리바바 호텔식 / 석식: 삼겹살 무제한<br>HOTEL: 상해 토우푸 아티젠 호텔 혹은 동급 [준5성]</p>
+                            <div class="relative pl-8 border-l-2 border-transparent">
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-400 shadow-md"></div>
+                                <h4 class="font-bold text-lg text-slate-800">🍽️ 식사 및 호텔 투숙</h4>
+                                <p class="text-slate-500 text-sm mt-1">조식: 호텔식 / 중식: 알리바바 호텔식 / 석식: 삼겹살 무제한<br><strong>HOTEL:</strong> 상해 토우푸 아티젠 호텔 혹은 동급 [준5성]</p>
                             </div>
                         </div>
                     </div>
@@ -485,33 +475,33 @@
                             <span class="text-4xl bg-blue-100 p-3 rounded-2xl">🎓</span>
                             <div>
                                 <h3 class="font-bold text-2xl text-slate-800">명문 대학 진로 탐방</h3>
-                                <p class="text-blue-600 font-medium">동화대학교 및 시내 탐방</p>
+                                <p class="text-blue-600 font-medium">상해 시내 일정</p>
                             </div>
                         </div>
                         <div class="space-y-6">
-                            <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100 mb-6 shadow-sm">
+                            <div class="bg-blue-50 p-5 rounded-2xl border border-blue-200 mb-6 shadow-sm">
                                 <h5 class="font-bold text-lg text-blue-900 mb-2 flex items-center gap-2">
-                                    <i class="fa-solid fa-building-columns text-blue-600"></i> 핵심: 중국 명문 동화대학교 공식 방문
+                                    <i class="fa-solid fa-building-columns text-blue-600"></i> 핵심: 명문 동화대학교 공식 방문
                                 </h5>
                                 <p class="text-sm text-slate-700 leading-relaxed">
-                                    상해를 대표하는 국가 중점 대학 중 하나인 <strong class="text-blue-700">동화대학교(Donghua Univ.)</strong> 캠퍼스를 자체 수배를 통해 직접 방문하여 학업 현장을 탐방합니다.
+                                    상해를 대표하는 국가 중점 대학 중 하나인 <strong class="text-blue-700">동화대학교(Donghua Univ.)</strong> 캠퍼스를 자체 수배를 통해 직접 방문하여 글로벌 학업 현장을 탐방합니다.
                                 </p>
                             </div>
                             
                             <div class="relative pl-8 border-l-2 border-blue-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-600"></div>
-                                <h4 class="font-bold text-lg">동화대학교 공식 방문 (예정)</h4>
-                                <p class="text-slate-500 text-sm mt-1">캠퍼 견학 및 탐방 <br><span class="text-red-500 text-xs font-bold">* 미정: 현지 대학 사정에 따라 방문 대학교는 다른 명문대로 변경될 수 있습니다.</span></p>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-600"></div>
+                                <h4 class="font-bold text-lg text-slate-800">동화대학교 견학 (예정)</h4>
+                                <p class="text-slate-500 text-sm mt-1">캠퍼스 탐방 및 대학 분위기 체험 <br><span class="text-red-500 text-xs font-bold">*현지 사정에 따라 타 명문 대학으로 변경될 수 있습니다.</span></p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-blue-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-300"></div>
-                                <h4 class="font-bold text-lg">상해 시내 문화탐방</h4>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-400"></div>
+                                <h4 class="font-bold text-lg text-slate-800">상해 시내 문화탐방</h4>
                                 <p class="text-slate-500 text-sm mt-1">안전 구역 내 학생 주도적 조별 자유시간 및 미션 수행</p>
                             </div>
-                            <div class="relative pl-8 border-l-2 border-blue-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                                <h4 class="font-bold text-lg">🍽️ 식사 및 호텔 투숙</h4>
-                                <p class="text-slate-500 text-sm mt-1">조식: 호텔식 / 중식: 학생 자유식 (불포함) / 석식: 학생 자유식 (불포함)<br>HOTEL: 상동 (상해 토우푸 아티젠 호텔)</p>
+                            <div class="relative pl-8 border-l-2 border-transparent">
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-400 shadow-md"></div>
+                                <h4 class="font-bold text-lg text-slate-800">🍽️ 식사 및 호텔 투숙</h4>
+                                <p class="text-slate-500 text-sm mt-1">조식: 호텔식 / 중식: 학생 자유식 (불포함) / 석식: 학생 자유식 (불포함)<br><strong>HOTEL:</strong> 상해 토우푸 아티젠 호텔 혹은 동급</p>
                             </div>
                         </div>
                     </div>
@@ -521,29 +511,29 @@
                             <span class="text-4xl bg-emerald-100 p-3 rounded-2xl">🧠</span>
                             <div>
                                 <h3 class="font-bold text-2xl text-slate-800">4차 산업혁명 딥다이브</h3>
-                                <p class="text-emerald-600 font-medium">레노버 & 바이두 무인운전</p>
+                                <p class="text-emerald-600 font-medium">레노버 & 바이두 체험</p>
                             </div>
                         </div>
                         <div class="space-y-6">
                             <div class="relative pl-8 border-l-2 border-emerald-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-emerald-600"></div>
-                                <h4 class="font-bold text-lg">레노버(Lenovo) 미래센터 방문</h4>
-                                <p class="text-slate-500 text-sm mt-1">관계자 공식 설명 및 가이드 통역 포함</p>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-600"></div>
+                                <h4 class="font-bold text-lg text-slate-800">레노버(Lenovo) 미래센터 방문</h4>
+                                <p class="text-slate-500 text-sm mt-1">관계자 공식 설명 및 가이드 통역 포함 (최신 IT 기기 및 AI 연동 기술 체험)</p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-emerald-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-emerald-400"></div>
-                                <h4 class="font-bold text-lg">바이두 무인운전 체험</h4>
-                                <p class="text-slate-500 text-sm mt-1">AI 자율주행 기술 현장 직접 체험</p>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-500"></div>
+                                <h4 class="font-bold text-lg text-slate-800">바이두 무인운전 체험</h4>
+                                <p class="text-slate-500 text-sm mt-1">세계적인 AI 기업 바이두의 자율주행 기술 현장 직접 탑승/체험</p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-emerald-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-emerald-300"></div>
-                                <h4 class="font-bold text-lg">남경로, 외탄 및 황포강 야경 관광</h4>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
+                                <h4 class="font-bold text-lg text-slate-800">남경로, 외탄 및 황포강 야경 관광</h4>
                                 <p class="text-slate-500 text-sm mt-1">화려한 상해의 스카이라인을 조망하는 도심 야경 탐방</p>
                             </div>
-                            <div class="relative pl-8 border-l-2 border-emerald-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                                <h4 class="font-bold text-lg">🍽️ 식사 및 호텔 투숙</h4>
-                                <p class="text-slate-500 text-sm mt-1">조식: 호텔식 / 중식: 현지식 / 석식: 한식 샤브샤브<br>HOTEL: 상동 (상해 토우푸 아티젠 호텔)</p>
+                            <div class="relative pl-8 border-l-2 border-transparent">
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-400 shadow-md"></div>
+                                <h4 class="font-bold text-lg text-slate-800">🍽️ 식사 및 호텔 투숙</h4>
+                                <p class="text-slate-500 text-sm mt-1">조식: 호텔식 / 중식: 현지식 / 석식: 한식 샤브샤브<br><strong>HOTEL:</strong> 상해 토우푸 아티젠 호텔 혹은 동급</p>
                             </div>
                         </div>
                     </div>
@@ -553,28 +543,32 @@
                             <span class="text-4xl bg-orange-100 p-3 rounded-2xl">🇰🇷</span>
                             <div class="text-left">
                                 <h3 class="font-bold text-2xl text-slate-800">역사와 미래, 그리고 귀국</h3>
-                                <p class="text-orange-600 font-medium">안전한 귀가 길</p>
+                                <p class="text-orange-600 font-medium">상해 - 인천 일정</p>
                             </div>
                         </div>
-                        <p class="text-slate-600 mb-8 leading-relaxed">4박 5일간 IT 중심지 상해/항주에서의 소중한 경험과 추억을 품고<br>글로벌 인재로 도약할 학생들을 응원하며 일정을 마무리합니다.</p>
                         
-                        <div class="space-y-6 text-left max-w-lg mx-auto mb-8">
+                        <div class="space-y-6 text-left max-w-xl mx-auto mb-8">
                             <div class="relative pl-8 border-l-2 border-orange-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-orange-500"></div>
-                                <h4 class="font-bold text-lg">임정(임시정부) 청사 및 신천지 방문</h4>
-                                <p class="text-slate-500 text-sm mt-1">애국선열의 발자취 견학 및 세련된 카페거리 산책</p>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
+                                <h4 class="font-bold text-lg text-slate-800">임정(임시정부) 청사 및 신천지 방문</h4>
+                                <p class="text-slate-500 text-sm mt-1">애국선열의 발자취 견학 및 세련된 카페거리(상해의 유럽) 산책</p>
                             </div>
                             <div class="relative pl-8 border-l-2 border-orange-100">
-                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-orange-300"></div>
-                                <h4 class="font-bold text-lg">허마(Hema) 스마트 마트 체험</h4>
-                                <p class="text-slate-500 text-sm mt-1">알리바바의 신유통 스마트 리테일 직접 체험 및 중식(딤섬)</p>
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-600"></div>
+                                <h4 class="font-bold text-lg text-slate-800">허마(Hema) 스마트 마트 체험</h4>
+                                <p class="text-slate-500 text-sm mt-1">알리바바의 온오프라인 결합 신유통 스마트 리테일 시스템 직접 체험 및 중식(딤섬)</p>
+                            </div>
+                            <div class="relative pl-8 border-l-2 border-transparent">
+                                <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-400 shadow-md"></div>
+                                <h4 class="font-bold text-lg text-slate-800">공항 이동</h4>
                             </div>
                         </div>
 
-                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 inline-block text-left w-full max-w-lg mx-auto">
-                            <p class="text-sm font-bold text-slate-700 mb-2">✈️ 귀국 안내</p>
-                            <p class="text-sm"><strong>16:20</strong> 상해 푸동 공항 출발 (OZ366)</p>
-                            <p class="text-sm mt-2"><strong>19:20</strong> 인천 국제공항 도착 및 해산</p>
+                        <div class="bg-red-50 p-6 rounded-2xl border border-red-200 inline-block text-left w-full max-w-lg mx-auto shadow-sm">
+                            <p class="text-base font-bold text-slate-800 mb-2">🛫 16:20 상해 푸동 공항 출발 (OZ366)</p>
+                            <div class="flex items-center justify-center my-2 text-red-300"><i class="fa-solid fa-arrow-down"></i></div>
+                            <p class="text-lg font-black text-slate-800">🛬 19:20 인천 국제공항 도착 및 해산</p>
+                            <p class="text-xs text-slate-500 mt-2 text-center">미래를 이끌어갈 글로벌 인재들의 값진 여정이었습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -582,7 +576,7 @@
         </div>
     </section>
 
-    <!-- NEW: AI Voice Assistant Guide (Dark Futuristic Theme) MOVED HERE -->
+    <!-- AI Voice Assistant Guide (복원 완료: 4개 패널 전체) -->
     <section id="ai-guide" class="py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white border-t border-slate-800 shadow-inner">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
@@ -596,11 +590,8 @@
 
                 <!-- How to use -->
                 <div class="bg-white/5 p-6 rounded-3xl border border-white/10 mb-8 flex flex-col md:flex-row items-center gap-6 shadow-2xl backdrop-blur-md relative overflow-hidden">
-                    <!-- Deco circle -->
                     <div class="absolute -right-10 -top-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-                    
                     <div class="shrink-0 relative z-10">
-                        <!-- Tmall Genie Icon -->
                         <div class="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center border-4 border-slate-600 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                             <i class="fa-solid fa-wave-square text-3xl text-purple-400 animate-pulse"></i>
                         </div>
@@ -622,14 +613,12 @@
                     </div>
                 </div>
 
-                <!-- Commands Grid -->
+                <!-- Commands Grid (4 Cards Restored) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     
                     <!-- 1. Lighting / Curtain -->
                     <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-amber-500/50 transition-colors">
-                        <h4 class="font-bold text-amber-400 mb-4 flex items-center gap-2 text-lg">
-                            <i class="fa-solid fa-lightbulb"></i> 조명 · 커튼 제어
-                        </h4>
+                        <h4 class="font-bold text-amber-400 mb-4 flex items-center gap-2 text-lg"><i class="fa-solid fa-lightbulb"></i> 조명 · 커튼 제어</h4>
                         <ul class="space-y-3">
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">불 켜기</span>
@@ -638,14 +627,6 @@
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">불 끄기</span>
                                 <div class="text-right"><div class="text-[10px] text-slate-500">关闭灯</div><div class="font-bold text-amber-200 text-sm">꽌비 떵</div></div>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
-                                <span class="text-sm font-medium text-slate-200">밝게 해줘</span>
-                                <div class="text-right"><div class="text-[10px] text-slate-500">调亮一点</div><div class="font-bold text-amber-200 text-sm">탸오 량 이디앤</div></div>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
-                                <span class="text-sm font-medium text-slate-200">어둡게 해줘</span>
-                                <div class="text-right"><div class="text-[10px] text-slate-500">调暗一点</div><div class="font-bold text-amber-200 text-sm">탸오 안 이디앤</div></div>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">커튼 열기</span>
@@ -660,9 +641,7 @@
 
                     <!-- 2. AC / Temp -->
                     <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-cyan-500/50 transition-colors">
-                        <h4 class="font-bold text-cyan-400 mb-4 flex items-center gap-2 text-lg">
-                            <i class="fa-solid fa-snowflake"></i> 에어컨 · 온도 제어
-                        </h4>
+                        <h4 class="font-bold text-cyan-400 mb-4 flex items-center gap-2 text-lg"><i class="fa-solid fa-snowflake"></i> 에어컨 · 온도 제어</h4>
                         <ul class="space-y-3">
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">에어컨 켜기</span>
@@ -671,10 +650,6 @@
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">에어컨 끄기</span>
                                 <div class="text-right"><div class="text-[10px] text-slate-500">关闭空调</div><div class="font-bold text-cyan-200 text-sm">꽌비 콩탸오</div></div>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
-                                <span class="text-sm font-medium text-slate-200">26도로 설정</span>
-                                <div class="text-right"><div class="text-[10px] text-slate-500">温度调到二十六度</div><div class="font-bold text-cyan-200 text-sm">원두 탸오따오 얼스리우 뚜</div></div>
                             </li>
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">온도 올리기</span>
@@ -687,11 +662,9 @@
                         </ul>
                     </div>
 
-                    <!-- 3. TV / Music -->
+                    <!-- 3. TV / Music (복원 완료) -->
                     <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-pink-500/50 transition-colors">
-                        <h4 class="font-bold text-pink-400 mb-4 flex items-center gap-2 text-lg">
-                            <i class="fa-solid fa-tv"></i> TV · 음악 제어
-                        </h4>
+                        <h4 class="font-bold text-pink-400 mb-4 flex items-center gap-2 text-lg"><i class="fa-solid fa-tv"></i> TV · 음악 제어</h4>
                         <ul class="space-y-3">
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">TV 켜기</span>
@@ -720,11 +693,9 @@
                         </ul>
                     </div>
 
-                    <!-- 4. Service / Time -->
+                    <!-- 4. Service / Time (복원 완료) -->
                     <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 shadow-lg hover:border-emerald-500/50 transition-colors">
-                        <h4 class="font-bold text-emerald-400 mb-4 flex items-center gap-2 text-lg">
-                            <i class="fa-solid fa-bell-concierge"></i> 편의 · 호텔 서비스
-                        </h4>
+                        <h4 class="font-bold text-emerald-400 mb-4 flex items-center gap-2 text-lg"><i class="fa-solid fa-bell-concierge"></i> 편의 · 호텔 서비스</h4>
                         <ul class="space-y-3">
                             <li class="flex justify-between items-center border-b border-slate-700/50 pb-2">
                                 <span class="text-sm font-medium text-slate-200">지금 몇 시야?</span>
@@ -758,7 +729,7 @@
         </div>
     </section>
 
-    <!-- 7. Checklist & Memo -->
+    <!-- Checklist & Memo -->
     <section id="check" class="py-16 bg-white border-t border-slate-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
@@ -766,17 +737,13 @@
                 <p class="text-sm text-slate-500 mt-1">잊지 말고 꼭 챙기세요! (입력 내용은 휴대폰에 자동 저장됩니다)</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Checklist -->
                 <div class="bg-cyan-50 p-6 rounded-2xl border border-cyan-100">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="font-bold text-lg text-cyan-900">✅ 필수 준비물 (중국 맞춤)</h3>
+                        <h3 class="font-bold text-lg text-cyan-900">✅ 필수 준비물</h3>
                         <button onclick="resetChecklist()" class="text-xs text-slate-500 underline hover:text-red-500 transition-colors bg-white px-2 py-1 rounded border border-slate-200">[초기화]</button>
                     </div>
-                    <div id="checklist-container" class="space-y-2">
-                        <!-- JS Generated -->
-                    </div>
+                    <div id="checklist-container" class="space-y-2"></div>
                 </div>
-                <!-- Memo -->
                 <div class="bg-yellow-50 p-6 rounded-2xl border border-yellow-100 shadow-sm">
                     <h3 class="font-bold text-lg mb-4 text-yellow-800">📝 나만의 탐방 메모장</h3>
                     <textarea id="travel-memo" class="w-full h-64 bg-white p-4 rounded-lg border border-yellow-200 text-slate-700 resize-none focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="자유일정 때 방문할 곳, 친구들과 약속, 탐방 시 느낀 점 등을 자유롭게 적어보세요."></textarea>
@@ -785,32 +752,139 @@
         </div>
     </section>
 
-    <!-- 8. Emergency Contact -->
-    <section id="contact" class="py-12 bg-slate-50">
+    <!-- Safety Management Manual (순서 이동 완료 - T-safe24 바로 위) -->
+    <section id="safety" class="py-16 bg-slate-50 border-t border-slate-200">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-slate-800">🚨 비상 연락망</h2>
-                <p class="text-sm text-slate-500 mt-1">위급 상황 시 아래 번호로 연락주세요.</p>
+            <div class="text-center mb-10">
+                <span class="text-red-600 font-bold tracking-wider uppercase text-sm">SAFETY MANUAL</span>
+                <h2 class="text-3xl font-bold text-slate-800 mt-2">🛡️ 학생 안전 관리 매뉴얼</h2>
+                <p class="text-slate-500 mt-2 text-sm">안전하고 유익한 탐방을 위해 학생들이 반드시 숙지해야 할 필수 수칙입니다.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <!-- Embassy -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center items-center text-center hover:border-red-500 transition-colors">
-                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-3">
-                        <i class="fa-solid fa-building-flag text-red-600 text-xl"></i>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <!-- Rule 1 -->
+                <div class="bg-white p-6 rounded-2xl border-l-4 border-red-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-red-100 text-red-600 w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800">이동 및 이탈 방지 (조별 활동)</h3>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-lg">주 상하이 대한민국 총영사관</h4>
-                    <p class="text-sm text-slate-500 mt-2">대표번호: +86-21-6295-5000</p>
-                    <p class="text-sm text-red-600 font-bold mt-1">긴급연락: +86-138-1650-9503</p>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside ml-2">
+                        <li>모든 일정은 배정된 <strong>조별(최소 3인 1조) 단위로 이동</strong>합니다.</li>
+                        <li>화장실 방문 등 개인 용무 시 <strong>반드시 인솔 교사나 가이드에게 사전 보고</strong>합니다.</li>
+                        <li>자유 시간에도 <strong>개별 행동은 절대 금지</strong>되며, 지정된 구역을 벗어나지 않습니다.</li>
+                    </ul>
                 </div>
-                <!-- Tourmaker Staff -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center items-center text-center hover:border-cyan-500 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mb-3">
-                        <i class="fa-solid fa-user-shield text-cyan-600 text-xl"></i>
+
+                <!-- Rule 2 -->
+                <div class="bg-white p-6 rounded-2xl border-l-4 border-amber-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-amber-100 text-amber-600 w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-traffic-light"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800">교통 및 도보 안전 주의</h3>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-lg">투어메이커 현지 담당팀</h4>
-                    <div class="mt-2 space-y-1">
-                        <p class="text-sm font-medium">이재명 대표: <a href="tel:010-9443-7881" class="text-cyan-600">010-9443-7881</a></p>
-                        <p class="text-sm font-medium">조혁 이사: <a href="tel:010-4249-4026" class="text-cyan-600">010-4249-4026</a></p>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside ml-2">
+                        <li>중국 현지는 무단횡단이나 역주행하는 <strong>오토바이, 전기 자전거가 매우 많습니다.</strong></li>
+                        <li>인도를 걸을 때도 스마트폰을 보지 않고 <strong>주변을 살피며 이동</strong>합니다.</li>
+                        <li>길을 건널 때는 신호등이 초록불이더라도 <strong>반드시 좌우 차량 멈춤을 확인</strong>합니다.</li>
+                    </ul>
+                </div>
+
+                <!-- Rule 3 -->
+                <div class="bg-white p-6 rounded-2xl border-l-4 border-green-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-green-100 text-green-600 w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-bottle-water"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800">식음료 및 개인 위생(보건)</h3>
+                    </div>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside ml-2">
+                        <li>호텔 수돗물은 마실 수 없습니다. <strong>물은 반드시 지급된 생수나 미네랄워터</strong>만 마십니다.</li>
+                        <li>배탈 위험이 있으므로 검증되지 않은 <strong>길거리 음식이나 찬 음식의 섭취를 자제</strong>합니다.</li>
+                        <li>평소 복용하는 개인 약(멀미약, 알러지약 등)은 기내 수하물로 소지하여 수시로 대비합니다.</li>
+                    </ul>
+                </div>
+
+                <!-- Rule 4 -->
+                <div class="bg-white p-6 rounded-2xl border-l-4 border-blue-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-siren-on"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800">비상 상황 대처 행동 요령</h3>
+                    </div>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside ml-2">
+                        <li>만약 일행과 떨어져 길을 잃었다면, 당황하여 돌아다니지 말고 <strong>그 자리에 멈춰서 대기</strong>합니다.</li>
+                        <li>즉시 인솔 교사나 가이드의 현지 비상 연락처로 전화하거나 카톡/위챗 메시지를 남깁니다.</li>
+                        <li>여권은 해외에서 신분증이므로, 개인 가방 안쪽 지퍼 등 <strong>가장 안전한 곳에 보관</strong>합니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- T-safe24 & Emergency Contact (안전 매뉴얼 직후로 자연스럽게 연결) -->
+    <section id="tsafe" class="py-16 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto mb-12">
+                <!-- T-safe24 Banner -->
+                <div class="bg-white rounded-3xl shadow-xl border border-red-100 p-6 md:p-8 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-red-600"></div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2 mt-2 flex justify-center items-center gap-2">
+                        <span class="text-2xl animate-pulse">🚨</span> 긴급상황 발생 시 대처방안
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-6">안전사고 및 긴급 상황에 대비한 행동 요령을 반드시 숙지해 주세요.</p>
+
+                    <div class="bg-red-50 rounded-2xl p-6 border border-red-100 flex flex-col md:flex-row items-center text-left gap-6">
+                        <div class="bg-[#c23e3e] text-white w-24 h-24 md:w-32 md:h-32 rounded-3xl flex items-center justify-center text-4xl md:text-5xl shrink-0 shadow-lg relative">
+                            <i class="fa-solid fa-truck-medical relative z-10"></i>
+                            <div class="absolute inset-0 bg-white/20 rounded-3xl animate-ping"></div>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h4 class="font-bold text-xl md:text-2xl text-[#8b2323] mb-2">투어메이커 안전 매뉴얼 (T-safe24)</h4>
+                            <p class="text-sm text-slate-700 mb-4 font-medium">사용자 실행형 긴급지원 시스템으로, 현장에서 즉각적으로 활용할 수 있는 안전 매뉴얼입니다.</p>
+                            <div class="bg-white p-4 rounded-xl border border-red-100 shadow-sm mb-4 inline-block w-full">
+                                <ul class="text-sm text-slate-600 space-y-2 text-left">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[#c23e3e]"></i> 위치 기반 긴급 지원 (인근 병원/경찰서 탐색)</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-comment-sms text-[#c23e3e]"></i> 사용자 요청형 SOS 위치 전송</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-share-nodes text-[#c23e3e]"></i> 긴급 상황 대응용 위치 공유 시스템</li>
+                                </ul>
+                            </div>
+                            <a href="https://indadady.github.io/T-safe24/" target="_blank" class="inline-flex items-center justify-center bg-[#c23e3e] text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-red-800 transition text-sm md:text-base w-full md:w-auto">
+                                매뉴얼 확인하기 <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                            <p class="text-[11px] text-slate-400 mt-4 text-center md:text-left">※ 본 시스템은 상시 자동 추적(관제)이 아닌, 필요 시 사용자의 실행으로 구동되는 안심 보조 도구입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Emergency Contacts -->
+            <div id="contact" class="max-w-4xl mx-auto">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-slate-800">현지 비상 연락망</h2>
+                    <p class="text-sm text-slate-500 mt-1">캡처해서 저장해두시면 위급 시 도움이 됩니다.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center items-center text-center hover:border-red-500 transition-colors">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-building-flag text-red-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg">주 상하이 대한민국 총영사관</h4>
+                        <p class="text-sm text-slate-500 mt-2">대표번호: +86-21-6295-5000</p>
+                        <p class="text-sm text-red-600 font-bold mt-1">긴급연락: +86-138-1650-9503</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center items-center text-center hover:border-cyan-500 transition-colors">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-user-shield text-cyan-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg">투어메이커 현지 담당팀</h4>
+                        <div class="mt-2 space-y-1">
+                            <p class="text-sm font-medium">이재명 대표: <a href="tel:010-9443-7881" class="text-cyan-600">010-9443-7881</a></p>
+                            <p class="text-sm font-medium">조혁 이사: <a href="tel:010-4249-4026" class="text-cyan-600">010-4249-4026</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -821,30 +895,20 @@
     <footer class="bg-[#f8f9fa] py-12 border-t border-slate-200 text-center">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-center gap-4 mb-8">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s320/logo.png" alt="Tourmaker" class="h-10">
-                <div class="text-left">
-                    <p class="text-xs text-slate-400">여행 기획 및 스마트 테크</p>
-                    <p class="text-sm font-bold text-slate-800">TOURMAKER (투어메이커)</p>
-                </div>
-            </div>
-            
-            <p style="font-size: 13px; color: #6c757d; text-align: center;" class="font-normal mb-8 max-w-2xl mx-auto leading-relaxed">
-                [System Powered by TOURMAKER] 본 스마트 가이드북은 <strong>영월교육지원청 진로진학지원센터</strong>의 기획과 <a href="http://tourmaker.kr" target="_blank" style="font-weight: bold; color: #6c757d; text-decoration: underline; text-underline-offset: 2px;">투어메이커</a>의 트래블 테크 기술 제휴로 제작되었습니다.
-            </p>
-
-            <div class="mb-12">
-                <a href="http://tourmaker.kr" target="_blank" class="inline-block border-2 border-slate-800 rounded-2xl px-8 py-4 bg-white text-slate-800 font-black hover:bg-slate-800 hover:text-white transition-all shadow-xl hover:shadow-2xl">
-                    👉 <span class="mr-2">투어메이커</span> 공식 홈페이지 방문하기
+                <a href="http://tourmaker.kr" target="_blank">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s320/logo.png" alt="Tourmaker" class="h-10">
                 </a>
             </div>
             
-            <p class="text-[10px] text-slate-300">&copy; 2026 Tourmaker Inc. All rights reserved.</p>
+            <p style="font-size: 12px; color: #6c757d; text-align: center; margin: 0 auto; max-width: 600px;">
+                [System Powered by TOURMAKER] 본 스마트 가이드북은 **영월교육지원청**의 기획과 <a href="http://tourmaker.kr" target="_blank" style="font-weight: bold; color: #6c757d; text-decoration: underline; text-underline-offset: 2px;">투어메이커</a>의 트래블 테크 기술 제휴로 제작되었습니다.
+            </p>
         </div>
     </footer>
 
     </div> <!-- 화면에만 보이고 인쇄할 때는 숨겨지는 메인 래퍼 종료 -->
 
-    <!-- 인쇄 전용 (A4) 레이아웃 시작 (평상시 화면에는 숨김) -->
+    <!-- 인쇄 전용 (A4) 레이아웃 시작 -->
     <div class="hidden print:block bg-white text-black p-4 w-full font-sans" style="max-width: 210mm; margin: 0 auto;">
         <div class="border-b-2 border-black pb-4 mb-6 text-center">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Gangwon_State_Office_of_Education_Symbol.svg" alt="영월교육지원청" class="h-12 mx-auto mb-3">
@@ -949,14 +1013,14 @@
             </tbody>
         </table>
 
-        <!-- 인쇄용 하단 안내 및 로고 (AI 객실 가이드는 웹에서 확인하도록 유도) -->
+        <!-- 인쇄용 하단 안내 및 로고 -->
         <div class="flex justify-between items-end mt-6 pt-4 border-t border-gray-300">
             <div class="text-[11px] text-gray-500 space-y-1">
-                <p>※ 상세한 <strong class="text-gray-700">객실 AI 음성비서 사용 가이드</strong>는 모바일 스마트 가이드북에서 확인해주세요.</p>
+                <p>※ 상세한 <strong class="text-red-600">안전 매뉴얼</strong> 및 <strong class="text-gray-700">T-safe24 긴급지원</strong>은 모바일 스마트 가이드북에서 확인해주세요.</p>
                 <p>※ 본 문서는 스마트 가이드북 내장 인쇄 기능으로 출력되었습니다.</p>
             </div>
             <div>
-                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEitI-Z-hD82keOJ1AqHw-VTZjpw2U-O5UjtV9h3zblyG0wjsVfBWe9X9o0Q_Spctrt7krkd9qXO0xKTmGJLw4gyMZrRqpshKMFttnyx6OcC8-IGz3XLUZpGQOnRqVdol8jz5HuoDLqsEifnVRhcjUJHm13Sz8JrX9aPswMNUwZPvGtJEnQjhc2PiXlo-B8" alt="Tourmaker Logo" class="h-7 object-contain">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s320/logo.png" alt="Tourmaker Logo" class="h-7 object-contain">
             </div>
         </div>
     </div>
@@ -1041,7 +1105,7 @@
             });
         })();
 
-        // Map Logic (ICN -> HGH -> SHA -> PVG -> ICN)
+        // --- Restored Original (Simple) Map Logic ---
         let mapInited = false;
         function initMap(){
             if(mapInited || !window.L) return;
@@ -1097,18 +1161,23 @@
             map.fitBounds(bounds, { padding: [50, 50] });
         }
 
-        // D-Day
-        const depart = new Date('2026-10-17');
-        const diff = Math.ceil((depart - new Date()) / (1000*60*60*24));
-        const badge = document.getElementById('d-day-badge');
-        badge.textContent = diff > 0 ? `D-${diff}` : (diff === 0 ? 'D-DAY' : `D+${Math.abs(diff)}`);
-        badge.classList.remove('hidden');
+        // D-Day and Map initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const depart = new Date('2026-10-17');
+            const diff = Math.ceil((depart - new Date()) / (1000*60*60*24));
+            const badge = document.getElementById('d-day-badge');
+            if (badge) {
+                badge.textContent = diff > 0 ? `D-${diff}` : (diff === 0 ? 'D-DAY' : `D+${Math.abs(diff)}`);
+                badge.classList.remove('hidden');
+            }
 
-        // Observer for Map
-        const io = new IntersectionObserver((entries)=>{
-            if(entries[0].isIntersecting) { initMap(); io.disconnect(); }
-        }, { threshold: 0.1 });
-        io.observe(document.getElementById('map-section'));
+            // Init simple map via observer to ensure correct rendering sizing
+            const io = new IntersectionObserver((entries)=>{
+                if(entries[0].isIntersecting) { initMap(); io.disconnect(); }
+            }, { threshold: 0.1 });
+            const mapSection = document.getElementById('map-section');
+            if(mapSection) io.observe(mapSection);
+        });
     </script>
 </body>
 </html>
